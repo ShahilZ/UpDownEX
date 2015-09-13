@@ -6,9 +6,12 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
+import android.graphics.Color;
 import android.os.Bundle;
+
 import android.os.Handler;
 import android.os.SystemClock;
+
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -19,92 +22,81 @@ import java.util.HashMap;
 import java.util.Random;
 
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Chronometer;
 import android.widget.ImageButton;
 
-import android.widget.LinearLayout;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.view.View.OnClickListener;
-import android.widget.TextView;
 import android.widget.Toast;
+
 
 
 public class UpDown extends Activity implements OnClickListener, Runnable{
     final Handler delay = new Handler();
-    //int index;
-    //int direction = 0;
-    //boolean done = false;
     ImageButton up; ImageButton curr;
     ImageButton down;
+    Boolean hasResumed = false;
+    //ImageView smile;
+
     Chronometer timer;
+
     String correct;
+    boolean gotRight;
     int width;
     int height;
+    int maxHeight;
+    int maxWidth;
     String name1; String name2;
+    Intent i;
 
-    //ArrayList<String[]> currList;
     ArrayList<String> questions = new ArrayList<String>();
-    //ArrayList<String[]> up_pairs = new ArrayList<String[]>();
-    //ArrayList<String[]> down_pairs = new ArrayList<String[]>();
     HashMap<String, ArrayList<String[]>> selection = new HashMap<String, ArrayList<String[]>>();
     RelativeLayout myLayout;
 
 
     protected void play(){
+
         Random randGen = new Random();
         if (questions.size() == 0) {
             end();
             return;
         }
-        //direction = 0 -> up
-//        if (direction == 0 && index > 9) {
-//            index = 0;
-//            direction = 1;
-//        }
-//        else if (!done && index > 9 && direction == 1) {
-//            index = 0;
-//            direction = 0;
-//            currList = down_pairs;
-//            Collections.shuffle(currList);
-//            done = true;
-//        }
-//        else if (done && index > 9) {
-//            end();
-//            return;
-//        }
-
-        //int above = getResources().getIdentifier(selection.get(currList.get(index)[direction]) , "drawable", getPackageName());
-        //int below = getResources().getIdentifier(selection.get(currList.get(index)[1 - direction]), "drawable", getPackageName());
+        System.out.println("First elem is " + questions.get(0));
 
         correct = questions.get(0);
+        System.out.println("In play method, correct = " + correct);
+        //instruction(correct);
         int index = randGen.nextInt(2);
         int above = 0;
         int below = 0;
-        String curr = questions.get(0);
-        if (selection.get(questions.get(0)).size() < 2) {
+        if (selection.get(correct).size() < 2) {
             index = 0;
-            name1 = selection.get(questions.get(0)).get(index)[index];
-            name2 = selection.get(questions.get(0)).get(index)[1 - index];
+            name1 = selection.get(correct).get(index)[index];
+            name2 = selection.get(correct).get(index)[1 - index];
             above = getResources().getIdentifier(name1, "drawable", getPackageName());
             below = getResources().getIdentifier(name2, "drawable", getPackageName());
 
         } else {
-            String[] remain = selection.get(questions.get(0)).get(1 - index);
+            String[] remain = selection.get(correct).get(index);
             ArrayList<String[]> remaining = new ArrayList<String[]>();
             remaining.add(remain);
-            name1 = selection.get(questions.get(0)).get(index)[index];
-            name2 = selection.get(questions.get(0)).get(index)[1 - index];
+            name1 = selection.get(correct).get(index)[index];
+            name2 = selection.get(correct).get(index)[1 - index];
             above = getResources().getIdentifier(name1, "drawable", getPackageName());
             below = getResources().getIdentifier(name2, "drawable", getPackageName());
-            selection.put(questions.get(0), remaining);
+            selection.put(correct, remaining);
         }
 
+        System.out.println("After both buttons, we have correct as " + correct +" and buttons " +
+                "as " + name1 + " " + name2);
+
         //selection.put(questions.get(0), remaining);
+        System.out.println("Removing..." + questions.get(0));
         questions.remove(0);
 
-        height = randGen.nextInt(getResources().getDisplayMetrics().heightPixels / 4);
-        width = randGen.nextInt(getResources().getDisplayMetrics().widthPixels - 300);
+        height = randGen.nextInt(maxHeight / 4);
+        width = randGen.nextInt(maxWidth - 300);
         System.out.println(height);
         if (height < 20) {
             height = 0;
@@ -118,13 +110,13 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
         //up.setRight(500);
         up.setX(width);
         up.setY(height);
+        up.setBackgroundColor(Color.TRANSPARENT);
 
-        height = randGen.nextInt(getResources().getDisplayMetrics().heightPixels / 3) + (getResources().getDisplayMetrics().heightPixels / 2);
-        width = randGen.nextInt(getResources().getDisplayMetrics().widthPixels - 300);
+        height = randGen.nextInt(maxHeight / 2) + (maxHeight / 3 * 2 + 50);
+        width = randGen.nextInt(maxWidth - 300);
 
-        System.out.println(height);
-        if (height > 800) {
-            height = 750;
+        if (height > maxHeight - 300) {
+            height = 850;
         } if (width < 50) {
             width = 500;
         }
@@ -137,25 +129,18 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
         //down.setY(800);
         down.setX(width);
         down.setY(height);
-        up.setOnClickListener(this);
-        down.setOnClickListener(this);
+        down.setBackgroundColor(Color.TRANSPARENT);
+        //up.setOnClickListener(this);
+        //down.setOnClickListener(this);
 
         myLayout.removeAllViews();
-        //((ViewGroup)myLayout.getParent()).removeView(myLayout);
-        //Research about layouts and removing parents.
-        //((ViewGroup)myLayout.getParent()).removeAllViews();
 
         myLayout.addView(up);
         myLayout.addView(down);
         setContentView(myLayout);
 
-        Toast.makeText(UpDown.this,
-                "Please find the " + curr + ".", Toast.LENGTH_SHORT).show();
-
         timer.setBase(SystemClock.elapsedRealtime());
         timer.start();
-
-        //index++;
 
     }
 
@@ -163,6 +148,7 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
         //myLayout.removeAllViews();
 
         //setContentView(myLayout);
+        System.out.println("Congratz");
         Toast.makeText(UpDown.this,
                 "This concludes the game. Congratulations!", Toast.LENGTH_SHORT).show();
         return;
@@ -174,30 +160,18 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_up_down);
         timer = (Chronometer) findViewById(R.id.chronometer);
-//        selection.put("shoe", "hat"); selection.put("feet","eye"); selection.put("rock", "moon");
-//        selection.put("flower","star"); selection.put("leg","arm"); selection.put("car","airplane");
-//        selection.put("mouse","butterfly"); selection.put("fish", "bee"); selection.put("bike", "balloon");
-//        selection.put("dog","bird"); selection.put("hat", "shoe"); selection.put("eye","feet");
-//        selection.put("moon", "rock");
-//        selection.put("star","flower"); selection.put("arm","leg"); selection.put("airplane","car");
-//        selection.put("butterfly","mouse"); selection.put("bee","fish"); selection.put("balloon","bike");
-//        selection.put("bird","dog");
+
+        //smile.setVisibility(View.INVISIBLE);
+        maxWidth = getResources().getDisplayMetrics().widthPixels;
+        maxHeight = getResources().getDisplayMetrics().heightPixels;
+        i = new Intent(this, InstructionActivity.class);
+
+        up = new ImageButton(this);
+        down = new ImageButton(this);
+        up.setOnClickListener(this);
+        down.setOnClickListener(this);
 
 
-//        String[] pair1 = {"shoe", "hat"}; String[] pair2 = {"eye","feet"}; String[] pair3 = {"rock", "moon"};
-//        String[] pair4 = {"flower","star"}; String[] pair5 = {"leg","arm"}; String[] pair6 = {"car","airplane"};
-//        String[] pair7 = {"fish","bee"}; String[] pair8 = {"bike","balloon"}; String[] pair9 = {"dog","bird"};
-//        String[] pair10 = {"mouse","butterfly"};
-//        up_pairs.add(pair1); up_pairs.add(pair2); up_pairs.add(pair3); up_pairs.add(pair4); up_pairs.add(pair5);
-//        up_pairs.add(pair6);up_pairs.add(pair7); up_pairs.add(pair8); up_pairs.add(pair9); up_pairs.add(pair10);
-//
-//        String[] pair11 = {"hat", "shoe"}; String[] pair12 = {"feet","eye"}; String[] pair13 = {"moon", "rock"};
-//        String[] pair14 = {"star","flower"}; String[] pair15 = {"arm","leg"}; String[] pair16 = {"airplane","car"};
-//        String[] pair17 = {"bee","fish"}; String[] pair18 = {"balloon","bike"}; String[] pair19 = {"bird","dog"};
-//        String[] pair20 = {"butterfly","mouse"};
-//        down_pairs.add(pair11); down_pairs.add(pair12); down_pairs.add(pair13); down_pairs.add(pair14);
-//        down_pairs.add(pair15); down_pairs.add(pair16); down_pairs.add(pair17); down_pairs.add(pair18);
-//        down_pairs.add(pair19); down_pairs.add(pair20);
 
 
         ArrayList<String[]> pair1 = new ArrayList<String[]>(); pair1.add(new String[]{"hat", "shoe"}); pair1.add(new String[]{"shoe", "hat"});
@@ -211,12 +185,6 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
         ArrayList<String[]> pair9 = new ArrayList<String[]>(); pair9.add(new String[]{"bird", "dog"}); pair9.add(new String[]{"dog", "bird"});
         ArrayList<String[]> pair10 = new ArrayList<String[]>(); pair10.add(new String[]{"butterfly", "mouse"}); pair10.add(new String[]{"mouse", "butterfly"});
 
-        // up_pairs.add(pair1); up_pairs.add(pair2); up_pairs.add(pair3); up_pairs.add(pair4); up_pairs.add(pair5);
-        // up_pairs.add(pair6);up_pairs.add(pair7); up_pairs.add(pair8); up_pairs.add(pair9); up_pairs.add(pair10);
-
-        // down_pairs.add(pair11); down_pairs.add(pair12); down_pairs.add(pair13); down_pairs.add(pair14);
-        // down_pairs.add(pair15); down_pairs.add(pair16); down_pairs.add(pair17); down_pairs.add(pair18);
-        // down_pairs.add(pair19); down_pairs.add(pair20);
 
         selection.put("hat", pair1); selection.put("shoe", pair1); selection.put("eye", pair2);
         selection.put("feet", pair2); selection.put("moon", pair3); selection.put("rock", pair3);
@@ -241,55 +209,58 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
 
 
 
-        //Sets up the string names from our hashtable. We use index to increment up the string arrays.
+        //Sets up the string names from our hashmap. We use index to increment up the string arrays.
         correct = questions.get(0);
-        Random choice = new Random();
-        int index = choice.nextInt(2);
-        name1 = selection.get(questions.get(0)).get(index)[index];
-        name2 = selection.get(questions.get(0)).get(index)[1 - index];
-        int above = getResources().getIdentifier(name1, "drawable", getPackageName());
-        int below = getResources().getIdentifier(name2, "drawable", getPackageName());
+        Intent j = new Intent(this, InstructionActivity.class);
+        j.putExtra("blicket", correct);
+        startActivity(j);
+        System.out.println("Initially, the question is " + correct);
+        //delay.postDelayed(this, 500);
 
-
-        Bitmap top = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), above), 250, 250, true);
-        //Bitmap top = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.airplane),500, 500, true);
-        up = new ImageButton(this);
-        up.setImageBitmap(top);
-        up.setRight(500);
-
-        up.setOnClickListener(this);
-
-        down = new ImageButton(this);
-        Bitmap bottom = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), below), 250, 250, true);
-        //Bitmap bottom = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.car),500, 500, true);
-        down.setImageBitmap(bottom);
-        down.setX(500);
-        down.setY(800);
-        down.setOnClickListener(this);
-
+//        Random choice = new Random();
+//        int index = choice.nextInt(2);
+//        name1 = selection.get(questions.get(0)).get(index)[index];
+//        name2 = selection.get(questions.get(0)).get(index)[1 - index];
+//        int above = getResources().getIdentifier(name1, "drawable", getPackageName());
+//        int below = getResources().getIdentifier(name2, "drawable", getPackageName());
+//
+//
+//        Bitmap top = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), above), 250, 250, true);
+//        //Bitmap top = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.airplane),500, 500, true);
+        //up = new ImageButton(this);
+//        up.setImageBitmap(top);
+//        up.setRight(500);
+//
+        //up.setOnClickListener(this);
+//
+        //down = new ImageButton(this);
+//        Bitmap bottom = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), below), 250, 250, true);
+//        //Bitmap bottom = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.car),500, 500, true);
+//        down.setImageBitmap(bottom);
+//        down.setX(500);
+//        down.setY(800);
+        //down.setOnClickListener(this);
+//
         myLayout = new RelativeLayout(this);
-        RelativeLayout.LayoutParams lParams = new RelativeLayout.LayoutParams(
-                RelativeLayout.LayoutParams.MATCH_PARENT,
-                RelativeLayout.LayoutParams.MATCH_PARENT);
+//        RelativeLayout.LayoutParams lParams = new RelativeLayout.LayoutParams(
+//                RelativeLayout.LayoutParams.MATCH_PARENT,
+//                RelativeLayout.LayoutParams.MATCH_PARENT);
+//
+//        myLayout.addView(up);
+//        myLayout.addView(down);
+//
+//        setContentView(myLayout);
+//        String[] remain = selection.get(questions.get(0)).get(1 - index);
+//        ArrayList<String[]> remaining = new ArrayList<String[]>();
+//        remaining.add(remain);
+//        selection.put(questions.get(0), remaining);
+//        Toast.makeText(UpDown.this,
+//                "Please find the " + correct + ".", Toast.LENGTH_SHORT).show();
+//        questions.remove(0);
+//
+//        timer.setBase(SystemClock.elapsedRealtime());
+//        timer.start();
 
-        myLayout.addView(up);
-        myLayout.addView(down);
-
-        setContentView(myLayout);
-        String[] remain = selection.get(questions.get(0)).get(1 - index);
-        ArrayList<String[]> remaining = new ArrayList<String[]>();
-        remaining.add(remain);
-        selection.put(questions.get(0), remaining);
-        Toast.makeText(UpDown.this,
-                "Please find the " + questions.get(0) + ".", Toast.LENGTH_SHORT).show();
-        questions.remove(0);
-
-        timer.setBase(SystemClock.elapsedRealtime());
-        timer.start();
-        //index++;
-
-
-        //play();
     }
 
     @Override
@@ -301,19 +272,50 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
         }
 
         if (v != curr) {
-            Toast.makeText(UpDown.this,
-                    "This is not the " + correct + ", please try again!", Toast.LENGTH_SHORT).show();
-            timer.stop();
-            timer.start();
-            return;
+            //Toast.makeText(UpDown.this,
+            //        "This is not the " + correct + ", please try again!", Toast.LENGTH_SHORT).show();
+            gotRight = false;
+        } else {
+            gotRight = true;
         }
         timer.stop();
+        curr.setImageResource(getResources().getIdentifier("smile", "drawable", getPackageName()));
+        curr.setX(maxWidth / 2);
+        curr.setY(maxHeight / 3);
+        curr.setClickable(false);
+        myLayout.removeAllViews();
+        myLayout.addView(curr);
+        setContentView(myLayout);
         long elapsedMillis = SystemClock.elapsedRealtime() - timer.getBase();
         Toast.makeText(UpDown.this,
-                "Elapsed seconds: " + elapsedMillis / 1000.0, Toast.LENGTH_SHORT).show();
-
-        delay.postDelayed(this, 1000);
+                "Wow, you got it " + gotRight + "!" + " Elapsed seconds: " + elapsedMillis / 1000.0, Toast.LENGTH_SHORT).show();
+        //instruction();
+        curr.setClickable(true);
+        delay.postDelayed(this, 2500);
     }
+
+    private void instruction() {
+        if (questions.size() == 0) {
+            end();
+            return;
+        }
+        //smile.setVisibility(View.INVISIBLE);
+        String blicket = questions.get(0);
+
+        //Intent i = new Intent(this, InstructionActivity.class);
+        i.putExtra("blicket", blicket);
+        startActivity(i);
+    }
+    @Override
+    public void onResume() {
+        super.onResume();  // Always call the superclass method first
+        if (!hasResumed) {
+            hasResumed = true;
+            return;
+        }
+        play();
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -336,10 +338,10 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
 
         return super.onOptionsItemSelected(item);
     }
-
     @Override
     public void run() {
-        play();
+        instruction();
     }
+
 
 }
