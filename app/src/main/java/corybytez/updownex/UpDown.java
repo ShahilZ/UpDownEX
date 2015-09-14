@@ -36,13 +36,17 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
     final Handler delay = new Handler();
     ImageButton up; ImageButton curr;
     ImageButton down;
-    Boolean hasResumed = false;
+    boolean hasResumed = false;
+    int total;
+    int rights;
     //ImageView smile;
 
     Chronometer timer;
 
     String correct;
     boolean gotRight;
+    boolean menu = false;
+    //boolean train = true;
     int width;
     int height;
     int maxHeight;
@@ -51,8 +55,11 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
     Intent i;
 
     ArrayList<String> questions = new ArrayList<String>();
+    ArrayList<String> trainings = new ArrayList<String>();
+    ArrayList<String> trainings2 = new ArrayList<String>();
     HashMap<String, ArrayList<String[]>> selection = new HashMap<String, ArrayList<String[]>>();
     RelativeLayout myLayout;
+
 
 
     protected void play(){
@@ -62,39 +69,54 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
             end();
             return;
         }
-        System.out.println("First elem is " + questions.get(0));
-
-        correct = questions.get(0);
-        System.out.println("In play method, correct = " + correct);
-        //instruction(correct);
-        int index = randGen.nextInt(2);
+        //System.out.println("First elem is " + questions.get(0));
         int above = 0;
         int below = 0;
-        if (selection.get(correct).size() < 2) {
-            index = 0;
-            name1 = selection.get(correct).get(index)[index];
-            name2 = selection.get(correct).get(index)[1 - index];
+        int index = randGen.nextInt(2);
+        if (trainer()) {
+            String direction;
+            String direction2;
+            name1 = trainings.get(0);
+            name2 = trainings2.get(0);
+
             above = getResources().getIdentifier(name1, "drawable", getPackageName());
             below = getResources().getIdentifier(name2, "drawable", getPackageName());
+            System.out.println("name1: " + name1 + " id: " + above);
+            System.out.println("name2: " + name2 + " id: " + below);
+            trainings.remove(0);
+            trainings2.remove(0);
 
         } else {
-            String[] remain = selection.get(correct).get(index);
-            ArrayList<String[]> remaining = new ArrayList<String[]>();
-            remaining.add(remain);
-            name1 = selection.get(correct).get(index)[index];
-            name2 = selection.get(correct).get(index)[1 - index];
-            above = getResources().getIdentifier(name1, "drawable", getPackageName());
-            below = getResources().getIdentifier(name2, "drawable", getPackageName());
-            selection.put(correct, remaining);
+            System.out.println("No longer training as train: " + trainer());
+            correct = questions.get(0);
+            System.out.println("In play method, correct = " + correct);
+            //instruction(correct);
+
+            if (selection.get(correct).size() < 2) {
+                index = 0;
+                name1 = selection.get(correct).get(index)[index];
+                name2 = selection.get(correct).get(index)[1 - index];
+                above = getResources().getIdentifier(name1, "drawable", getPackageName());
+                below = getResources().getIdentifier(name2, "drawable", getPackageName());
+
+            } else {
+                String[] remain = selection.get(correct).get(index);
+                ArrayList<String[]> remaining = new ArrayList<String[]>();
+                remaining.add(remain);
+                name1 = selection.get(correct).get(index)[index];
+                name2 = selection.get(correct).get(index)[1 - index];
+                above = getResources().getIdentifier(name1, "drawable", getPackageName());
+                below = getResources().getIdentifier(name2, "drawable", getPackageName());
+                selection.put(correct, remaining);
+            }
+
+            System.out.println("After both buttons, we have correct as " + correct + " and buttons " +
+                    "as " + name1 + " " + name2);
+
+            //selection.put(questions.get(0), remaining);
+            System.out.println("Removing..." + questions.get(0));
+            questions.remove(0);
         }
-
-        System.out.println("After both buttons, we have correct as " + correct +" and buttons " +
-                "as " + name1 + " " + name2);
-
-        //selection.put(questions.get(0), remaining);
-        System.out.println("Removing..." + questions.get(0));
-        questions.remove(0);
-
         height = randGen.nextInt(maxHeight / 4);
         width = randGen.nextInt(maxWidth - 300);
         System.out.println(height);
@@ -202,19 +224,35 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
         questions.add("airplane"); questions.add("airplane"); questions.add("car"); questions.add("car"); questions.add("bee");
         questions.add("bee"); questions.add("fish"); questions.add("fish"); questions.add("balloon"); questions.add("balloon");
         questions.add("bike"); questions.add("bike"); questions.add("bird"); questions.add("bird"); questions.add("dog");
-        questions.add("dog"); questions.add("butterfly"); questions.add("butterfly"); questions.add("mouse"); questions.add("mouse");
+        questions.add("dog"); questions.add("butterfly"); questions.add("butterfly"); questions.add("mouse");
+        questions.add("mouse");
 
 
         Collections.shuffle(questions);
 
+        trainings.add("blicket"); trainings.add("dax"); trainings.add("tunk"); trainings.add("tanzer"); trainings.add("lep");
+        trainings.add("tima"); trainings.add("wug"); trainings.add("pank"); trainings.add("koba"); trainings.add("zav");
+
+        trainings2.add("tima"); trainings2.add("wug"); trainings2.add("pank");  trainings2.add("koba");  trainings2.add("zav");
+        trainings2.add("blicket"); trainings2.add("dax"); trainings2.add("tunk"); trainings.add("tanzer"); trainings.add("lep");
+
+
+
 
 
         //Sets up the string names from our hashmap. We use index to increment up the string arrays.
-        correct = questions.get(0);
-        Intent j = new Intent(this, InstructionActivity.class);
-        j.putExtra("blicket", correct);
-        startActivity(j);
-        System.out.println("Initially, the question is " + correct);
+        //correct = questions.get(0);
+        myLayout = new RelativeLayout(this);
+        if (!menu) {
+            Intent j = new Intent(this, GetInfo.class);
+            startActivity(j);
+            return;
+        }
+        //Intent j = new Intent(this, InstructionActivity.class);
+        //j.putExtra("blicket", correct);
+        //startActivity(j);
+        //correct = questions.get(0);
+        //System.out.println("Initially, the question is " + correct);
         //delay.postDelayed(this, 500);
 
 //        Random choice = new Random();
@@ -241,7 +279,6 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
 //        down.setY(800);
         //down.setOnClickListener(this);
 //
-        myLayout = new RelativeLayout(this);
 //        RelativeLayout.LayoutParams lParams = new RelativeLayout.LayoutParams(
 //                RelativeLayout.LayoutParams.MATCH_PARENT,
 //                RelativeLayout.LayoutParams.MATCH_PARENT);
@@ -272,12 +309,17 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
         }
 
         if (v != curr) {
-            //Toast.makeText(UpDown.this,
-            //        "This is not the " + correct + ", please try again!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(UpDown.this,
+                    "This is not the " + correct + ", please try again!", Toast.LENGTH_SHORT).show();
             gotRight = false;
+            //if (train) {
+            //    v.setVisibility(View.INVISIBLE);
+            //}
         } else {
             gotRight = true;
+            rights++;
         }
+        total++;
         timer.stop();
         curr.setImageResource(getResources().getIdentifier("smile", "drawable", getPackageName()));
         curr.setX(maxWidth / 2);
@@ -291,7 +333,15 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
                 "Wow, you got it " + gotRight + "!" + " Elapsed seconds: " + elapsedMillis / 1000.0, Toast.LENGTH_SHORT).show();
         //instruction();
         curr.setClickable(true);
-        delay.postDelayed(this, 2500);
+        //v.setVisibility(View.VISIBLE);
+        delay.postDelayed(this, 1500);
+    }
+    private boolean trainer() {
+        if (total < 11 && rights < 4){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     private void instruction() {
@@ -301,9 +351,20 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
         }
         //smile.setVisibility(View.INVISIBLE);
         String blicket = questions.get(0);
+        if (trainer()) {
+            Random rand = new Random();
+            int index = rand.nextInt(2);
+            if (index == 0) {
+                correct = trainings.get(0);
+            } else {
+                correct = trainings2.get(0);
+            }
+            blicket = correct;
+        }
 
-        //Intent i = new Intent(this, InstructionActivity.class);
+        Intent i = new Intent(this, InstructionActivity.class);
         i.putExtra("blicket", blicket);
+        i.putExtra("train", trainer());
         startActivity(i);
     }
     @Override
@@ -312,9 +373,15 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
         if (!hasResumed) {
             hasResumed = true;
             return;
+        } else if (!menu) {
+            menu = true;
+            System.out.println("Nice screen");
+            instruction();
+            return;
         }
         play();
     }
+
 
 
     @Override

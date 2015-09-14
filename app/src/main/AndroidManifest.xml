@@ -20,6 +20,10 @@
             android:name=".InstructionActivity"
             android:label="InstructionActivity" >
         </activity>
+        <activity
+            android:name=".GetInfo"
+            android:label="GetInfo" >
+        </activity>
     </application>
 
 </manifest>
