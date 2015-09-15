@@ -56,7 +56,7 @@ public class InstructionActivity extends ActionBarActivity implements OnClickLis
             greenButton.setBackgroundColor(Color.TRANSPARENT);
             greenButton.setImageResource(getResources().getIdentifier("button", "drawable", getPackageName()));
             greenButton.setX(getResources().getDisplayMetrics().widthPixels / 2);
-            greenButton.setY(getResources().getDisplayMetrics().heightPixels / 2);
+            greenButton.setY(getResources().getDisplayMetrics().heightPixels / 3);
             //greenButton.setLayoutParams(lParams);
 
 
