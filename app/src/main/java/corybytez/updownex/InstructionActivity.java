@@ -36,6 +36,10 @@ public class InstructionActivity extends ActionBarActivity implements OnClickLis
         greenButton.setBackgroundColor(Color.TRANSPARENT);
         blicket = new ImageButton(this);
         thisLayout = new RelativeLayout(this);
+//        RelativeLayout.LayoutParams lParams = new RelativeLayout.LayoutParams(
+//                RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+//        lParams.addRule(RelativeLayout.CENTER_HORIZONTAL);
+//        lParams.addRule(RelativeLayout.CENTER_VERTICAL);
         item = getIntent().getStringExtra("blicket");
         training = getIntent().getBooleanExtra("train", false);
         System.out.println("is training on? " + training);
@@ -53,6 +57,7 @@ public class InstructionActivity extends ActionBarActivity implements OnClickLis
             greenButton.setImageResource(getResources().getIdentifier("button", "drawable", getPackageName()));
             greenButton.setX(getResources().getDisplayMetrics().widthPixels / 2);
             greenButton.setY(getResources().getDisplayMetrics().heightPixels / 2);
+            //greenButton.setLayoutParams(lParams);
 
 
             thisLayout.addView(blicket);

@@ -321,9 +321,14 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
         }
         total++;
         timer.stop();
+        RelativeLayout.LayoutParams lParams = new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.MATCH_PARENT,
+                RelativeLayout.LayoutParams.MATCH_PARENT);
+
         curr.setImageResource(getResources().getIdentifier("smile", "drawable", getPackageName()));
-        curr.setX(maxWidth / 2);
-        curr.setY(maxHeight / 3);
+        lParams.addRule(RelativeLayout.CENTER_HORIZONTAL);
+        lParams.addRule(RelativeLayout.CENTER_VERTICAL);
+        curr.setLayoutParams(lParams);
         curr.setClickable(false);
         myLayout.removeAllViews();
         myLayout.addView(curr);
