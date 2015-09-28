@@ -50,12 +50,22 @@ public class InstructionActivity extends ActionBarActivity implements OnClickLis
             item = item + "1";
             System.out.println("item 2 is " + item2 + " training: " + training);
             blicket.setImageResource(getResources().getIdentifier(item2, "drawable", getPackageName()));
+            blicket.setX(getResources().getDisplayMetrics().widthPixels /3);
+            blicket.setY(getResources().getDisplayMetrics().heightPixels /3);
             blicket.setOnClickListener(this);
+
             greenButton = new ImageButton(this);
+            //RelativeLayout.LayoutParams lP = (RelativeLayout.LayoutParams)greenButton.getLayoutParams();
+            //lP.addRule(RelativeLayout.CENTER_VERTICAL);
+            //lP.addRule(RelativeLayout.CENTER_HORIZONTAL);
+
+            //greenButton.setLayoutParams(lP);
+
             greenButton.setOnClickListener(this);
             greenButton.setBackgroundColor(Color.TRANSPARENT);
             greenButton.setImageResource(getResources().getIdentifier("button", "drawable", getPackageName()));
-            greenButton.setX(getResources().getDisplayMetrics().widthPixels / 2);
+
+            greenButton.setX(getResources().getDisplayMetrics().widthPixels / 3);
             greenButton.setY(getResources().getDisplayMetrics().heightPixels / 3);
             //greenButton.setLayoutParams(lParams);
 

@@ -7,9 +7,12 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+
         <activity
             android:name=".UpDown"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,11 +21,15 @@
         </activity>
         <activity
             android:name=".InstructionActivity"
-            android:label="InstructionActivity" >
+            android:label="InstructionActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".GetInfo"
-            android:label="GetInfo" >
+            android:label="GetInfo"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 

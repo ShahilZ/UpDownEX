@@ -36,15 +36,17 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
     final Handler delay = new Handler();
     ImageButton up; ImageButton curr;
     ImageButton down;
+    private ImageButton correction;
     boolean hasResumed = false;
     int total;
     int rights;
+    boolean trainingDone = false;
     //ImageView smile;
 
     Chronometer timer;
 
     String correct;
-    boolean gotRight;
+    boolean gotRight = true;
     boolean menu = false;
     //boolean train = true;
     int width;
@@ -85,6 +87,10 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
             System.out.println("name2: " + name2 + " id: " + below);
             trainings.remove(0);
             trainings2.remove(0);
+            correction.setImageResource(getResources().getIdentifier(correct, "drawable", getPackageName()));
+            correction.setOnClickListener(this);
+            correction.setBackgroundColor(Color.YELLOW);
+            correction.setVisibility(View.INVISIBLE);
 
         } else {
             System.out.println("No longer training as train: " + trainer());
@@ -117,48 +123,63 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
             System.out.println("Removing..." + questions.get(0));
             questions.remove(0);
         }
-        height = randGen.nextInt(maxHeight / 4);
-        width = randGen.nextInt(maxWidth - 300);
-        System.out.println(height);
+        height = randGen.nextInt(maxHeight / 2) - 250;
+        width = randGen.nextInt(maxWidth / 2);
+        System.out.println("The top height is.... " + height);
+        System.out.println("The top width is ...." + width);
         if (height < 20) {
             height = 0;
         } if (width < 50) {
             width = 0;
         }
+        Toast.makeText(UpDown.this,
+                "Top height is  " + height + "!" + " Top width is  " + width, Toast.LENGTH_LONG).show();
+        //System.out.println("The width is " + width);
 
-        Bitmap top = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), above), 250, 250, true);
+        Bitmap top = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), above), 400, 400, true);
         //Bitmap top = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.airplane),250, 250, true);
         up.setImageBitmap(top);
         //up.setRight(500);
         up.setX(width);
         up.setY(height);
+        //up.setX(height);
+        //up.setY(width);
         up.setBackgroundColor(Color.TRANSPARENT);
 
-        height = randGen.nextInt(maxHeight / 2) + (maxHeight / 3 * 2 + 50);
-        width = randGen.nextInt(maxWidth - 300);
+        height = randGen.nextInt(maxHeight / 2) + (maxHeight / 2);
+        width = randGen.nextInt(maxWidth);
 
-        if (height > maxHeight - 300) {
-            height = 850;
-        } if (width < 50) {
-            width = 500;
+        if (height > maxHeight - 750) {
+            height = 1380;
+        } if (width > 1000) {
+            width = 800;
         }
-        System.out.println("The new height is " + height);
+        System.out.println("The new bottom height is " + height);
+        System.out.println("The new bottom width is " + width);
+        Toast.makeText(UpDown.this,
+                "Bottom height is  " + height + "!" + " Bottom width is  " + width, Toast.LENGTH_SHORT).show();
 
-        Bitmap bottom = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(),below), 250, 250, true);
+        Bitmap bottom = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(),below), 400, 400, true);
         //Bitmap bottom = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.car), 250, 250, true);
         down.setImageBitmap(bottom);
         //down.setX(500);
         //down.setY(800);
         down.setX(width);
         down.setY(height);
+        //down.setX(height);
+        //down.setY(width);
         down.setBackgroundColor(Color.TRANSPARENT);
         //up.setOnClickListener(this);
         //down.setOnClickListener(this);
 
         myLayout.removeAllViews();
 
+        correction.setX(maxWidth / 3);
+        correction.setY(maxHeight / 3);
+
         myLayout.addView(up);
         myLayout.addView(down);
+        myLayout.addView(correction);
         setContentView(myLayout);
 
         timer.setBase(SystemClock.elapsedRealtime());
@@ -173,7 +194,8 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
         System.out.println("Congratz");
         Toast.makeText(UpDown.this,
                 "This concludes the game. Congratulations!", Toast.LENGTH_SHORT).show();
-        return;
+        finish();
+        //return;
     }
 
     @Override
@@ -190,6 +212,7 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
 
         up = new ImageButton(this);
         down = new ImageButton(this);
+        correction = new ImageButton(this);
         up.setOnClickListener(this);
         down.setOnClickListener(this);
 
@@ -228,6 +251,8 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
         questions.add("mouse");
 
 
+        Collections.shuffle(questions);
+        Collections.shuffle(questions);
         Collections.shuffle(questions);
 
         trainings.add("blicket"); trainings.add("dax"); trainings.add("tunk"); trainings.add("tanzer"); trainings.add("lep");
@@ -308,31 +333,52 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
             curr = down;
         }
 
+
         if (v != curr) {
             Toast.makeText(UpDown.this,
                     "This is not the " + correct + ", please try again!", Toast.LENGTH_SHORT).show();
-            gotRight = false;
+            gotRight = true;
+            if (!trainingDone) {
+                curr.setVisibility(View.INVISIBLE);
+                correction.setVisibility(View.VISIBLE);
+                gotRight = false;
+                //myLayout.removeView(v);
+                //myLayout.removeView(correction);
+                //myLayout.addView(v);
+                //myLayout.addView(correction);
+                //setContentView(myLayout);
+                rights = 0;
+            }
             //if (train) {
             //    v.setVisibility(View.INVISIBLE);
             //}
         } else {
             gotRight = true;
-            rights++;
+            if (!trainingDone) {
+                rights++;
+            }
         }
-        total++;
+        if (!trainingDone) {
+            total++;
+        }
         timer.stop();
 //        RelativeLayout.LayoutParams lParams = new RelativeLayout.LayoutParams(
 //                RelativeLayout.LayoutParams.MATCH_PARENT,
 //                RelativeLayout.LayoutParams.MATCH_PARENT);
+        if (gotRight) {
+            curr.setImageResource(getResources().getIdentifier("smile", "drawable", getPackageName()));
+            curr.setX(maxWidth / 3);
+            curr.setY(maxHeight / 3);
+//          lParams.addRule(RelativeLayout.CENTER_HORIZONTAL);
+//          lParams.addRule(RelativeLayout.CENTER_VERTICAL);
+//          curr.setLayoutParams(lParams);
+            curr.setClickable(false);
+            myLayout.removeAllViews();
+            myLayout.addView(curr);
+            setContentView(myLayout);
 
-        curr.setImageResource(getResources().getIdentifier("smile", "drawable", getPackageName()));
-//        lParams.addRule(RelativeLayout.CENTER_HORIZONTAL);
-//        lParams.addRule(RelativeLayout.CENTER_VERTICAL);
-//        curr.setLayoutParams(lParams);
-        curr.setClickable(false);
-        myLayout.removeAllViews();
-        myLayout.addView(curr);
-        setContentView(myLayout);
+        }
+
         long elapsedMillis = SystemClock.elapsedRealtime() - timer.getBase();
         Toast.makeText(UpDown.this,
                 "Wow, you got it " + gotRight + "!" + " Elapsed seconds: " + elapsedMillis / 1000.0, Toast.LENGTH_SHORT).show();
@@ -342,10 +388,15 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
         delay.postDelayed(this, 1500);
     }
     private boolean trainer() {
-        if (total < 11 && rights < 4){
-            return true;
-        } else {
+        if (total > 9 && !trainingDone) {
+            finish();
             return false;
+        }
+        else if (total < 11 && rights == 3){
+            trainingDone = true;
+            return false;
+        } else {
+            return true;
         }
     }
 
