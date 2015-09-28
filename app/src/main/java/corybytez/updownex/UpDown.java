@@ -123,7 +123,7 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
             System.out.println("Removing..." + questions.get(0));
             questions.remove(0);
         }
-        height = randGen.nextInt(maxHeight / 2) - 250;
+        height = randGen.nextInt(maxHeight / 2);
         width = randGen.nextInt(maxWidth / 2);
         System.out.println("The top height is.... " + height);
         System.out.println("The top width is ...." + width);
@@ -376,8 +376,8 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
             myLayout.removeAllViews();
             myLayout.addView(curr);
             setContentView(myLayout);
-
         }
+        curr.setVisibility(View.VISIBLE);
 
         long elapsedMillis = SystemClock.elapsedRealtime() - timer.getBase();
         Toast.makeText(UpDown.this,
