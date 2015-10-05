@@ -34,12 +34,11 @@ public class InstructionActivity extends ActionBarActivity implements OnClickLis
         greenButton = (ImageButton)findViewById(R.id.imageButton);
         greenButton.setOnClickListener(this);
         greenButton.setBackgroundColor(Color.TRANSPARENT);
+        greenButton.setClickable(false);
+        //greenButton.setVisibility(View.INVISIBLE);
         blicket = new ImageButton(this);
         thisLayout = new RelativeLayout(this);
-//        RelativeLayout.LayoutParams lParams = new RelativeLayout.LayoutParams(
-//                RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
-//        lParams.addRule(RelativeLayout.CENTER_HORIZONTAL);
-//        lParams.addRule(RelativeLayout.CENTER_VERTICAL);
+
         item = getIntent().getStringExtra("blicket");
         training = getIntent().getBooleanExtra("train", false);
         System.out.println("is training on? " + training);
@@ -52,14 +51,11 @@ public class InstructionActivity extends ActionBarActivity implements OnClickLis
             blicket.setImageResource(getResources().getIdentifier(item2, "drawable", getPackageName()));
             blicket.setX(getResources().getDisplayMetrics().widthPixels /3);
             blicket.setY(getResources().getDisplayMetrics().heightPixels /3);
+            blicket.setBackgroundColor(Color.TRANSPARENT);
             blicket.setOnClickListener(this);
 
             greenButton = new ImageButton(this);
-            //RelativeLayout.LayoutParams lP = (RelativeLayout.LayoutParams)greenButton.getLayoutParams();
-            //lP.addRule(RelativeLayout.CENTER_VERTICAL);
-            //lP.addRule(RelativeLayout.CENTER_HORIZONTAL);
 
-            //greenButton.setLayoutParams(lP);
 
             greenButton.setOnClickListener(this);
             greenButton.setBackgroundColor(Color.TRANSPARENT);
@@ -78,6 +74,14 @@ public class InstructionActivity extends ActionBarActivity implements OnClickLis
 
         audio = MediaPlayer.create(this, res_id );
         audio.start();
+//        if (!training) {
+//            while (audio.isPlaying()) {}
+//        }
+//        for (int i = 0; i < 1000; i++) {}
+//        while (!audio.isPlaying()) {
+//            greenButton.setClickable(true);
+//        }
+        greenButton.setClickable(true);
 
     }
 
@@ -115,11 +119,14 @@ public class InstructionActivity extends ActionBarActivity implements OnClickLis
                 thisLayout.addView(greenButton);
                 item2 = item2 + "2";
                 int res_id = getResources().getIdentifier(item2, "raw", getPackageName());
-                setContentView(thisLayout);
+                //setContentView(thisLayout);
                 MediaPlayer audio2 = MediaPlayer.create(this, res_id);
                 while (audio.isPlaying()) {}
                 audio2.start();
+                while (audio2.isPlaying()) {}
+                setContentView(thisLayout);
                 return;
+
             }
         }
 
