@@ -18,54 +18,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4d86023-6787-4a51-8a79-05c21e3a9f27" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/tanzar.png" />
-      <change type="DELETED" beforePath="C:\Users\shahi_000\AndroidStudioProjects\UpDownEX\app\src\main\res\drawable\refocusing.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\shahi_000\AndroidStudioProjects\UpDownEX\app\src\main\res\drawable\tanzer.png" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\shahi_000\AndroidStudioProjects\UpDownEX\app\src\main\res\raw\tanzer1.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/tanzar1.mp3" />
-      <change type="MOVED" beforePath="C:\Users\shahi_000\AndroidStudioProjects\UpDownEX\app\src\main\res\raw\tanzer2.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/tanzar2.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/airplane.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/airplane.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/arm.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/arm.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/balloon.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/balloon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bee.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bee.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bike.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bike.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bird.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bird.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/blicket.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/blicket.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/butterfly.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/butterfly.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/button.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/button.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/car.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/car.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/dax.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/dax.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/eye.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/eye.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/feet.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/feet.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/fish.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/fish.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/gradle_project_sync_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/gradle_project_sync_data.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/hat.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/hat.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/koba.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/koba.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/leg.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/leg.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/lep.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/lep.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/moon.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/moon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/mouse.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/mouse.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pank.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/pank.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/rock.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/rock.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/shoe.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/shoe.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/star.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/star.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/tima.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/tima.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/tunk.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/tunk.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/wug.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/wug.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/zav.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/zav.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/corybytez/updownex/InstructionActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/corybytez/updownex/InstructionActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/corybytez/updownex/UpDown.java" afterPath="$PROJECT_DIR$/app/src/main/java/corybytez/updownex/UpDown.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_up_down.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_up_down.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="UpDownEX.iws" />
@@ -98,13 +55,21 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/corybytez/updownex/UpDown.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="205" column="17" selection-start-line="205" selection-start-column="17" selection-end-line="205" selection-end-column="17" />
+              <caret line="316" column="0" selection-start-line="316" selection-start-column="0" selection-end-line="316" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#9086#9096#0" expanded="true" />
-                <element signature="e#9229#9239#0" expanded="true" />
-                <element signature="e#9380#9390#0" expanded="true" />
-                <element signature="e#9524#9534#0" expanded="true" />
+                <element signature="e#7092#7102#0" expanded="true" />
+                <element signature="e#7235#7245#0" expanded="true" />
+                <element signature="e#7378#7388#0" expanded="true" />
+                <element signature="e#7523#7533#0" expanded="true" />
+                <element signature="e#7672#7682#0" expanded="true" />
+                <element signature="e#7813#7823#0" expanded="true" />
+                <element signature="e#7964#7974#0" expanded="true" />
+                <element signature="e#8107#8117#0" expanded="true" />
+                <element signature="e#8258#8268#0" expanded="true" />
+                <element signature="e#8402#8412#0" expanded="true" />
+                <element signature="e#15637#15638#0" expanded="true" />
+                <element signature="e#15666#15667#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -123,11 +88,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EndActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/corybytez/updownex/EndActivity.java">
+      <file leaf-file-name="DatabaseHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/corybytez/updownex/DatabaseHelper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="113" column="41" selection-start-line="113" selection-start-column="41" selection-end-line="113" selection-end-column="41" />
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EndActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/corybytez/updownex/EndActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="5.2197185">
+              <caret line="120" column="34" selection-start-line="120" selection-start-column="34" selection-end-line="120" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -146,10 +121,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.92676055">
+            <state vertical-scroll-proportion="0.0">
               <caret line="37" column="47" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
               <folding />
             </state>
@@ -1466,11 +1441,11 @@
         <option value="$PROJECT_DIR$/app/src/main/java/corybytez/updownex/GetInfo.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_up_down.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/corybytez/updownex/UpDown.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_end.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/corybytez/updownex/EndActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/corybytez/updownex/InstructionActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/corybytez/updownex/UpDown.java" />
       </list>
     </option>
   </component>
@@ -2037,7 +2012,13 @@
       <option name="project" value="LOCAL" />
       <updated>1443435386081</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Transparencies and images fixed.">
+      <created>1444089572831</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1444089572831</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2051,10 +2032,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="95" y="0" width="1209" height="701" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290441" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2959559" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2959559" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -2100,7 +2081,8 @@
     <MESSAGE value="VERY close to the final product: I added in Serah's code of GetInfo.java as well as the necessary DB files to make that menu screen pop up. Code is still buggy (pictures need to be same size, the menu has a NullPointerException bug...) but we are super close." />
     <MESSAGE value="Solid changes to the app. We have gotten relative centering down. Might consider not allowing the button to be pushed till a certain time. Still need to incorporate the DB code to actually save the data. It's looking better and more like an experiment!" />
     <MESSAGE value="Transparencies and images fixed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Transparencies and images fixed." />
+    <MESSAGE value="Commented the code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commented the code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2163,10 +2145,18 @@
           <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9086#9096#0" expanded="true" />
-            <element signature="e#9229#9239#0" expanded="true" />
-            <element signature="e#9380#9390#0" expanded="true" />
-            <element signature="e#9524#9534#0" expanded="true" />
+            <element signature="e#7092#7102#0" expanded="true" />
+            <element signature="e#7235#7245#0" expanded="true" />
+            <element signature="e#7378#7388#0" expanded="true" />
+            <element signature="e#7523#7533#0" expanded="true" />
+            <element signature="e#7672#7682#0" expanded="true" />
+            <element signature="e#7813#7823#0" expanded="true" />
+            <element signature="e#7964#7974#0" expanded="true" />
+            <element signature="e#8107#8117#0" expanded="true" />
+            <element signature="e#8258#8268#0" expanded="true" />
+            <element signature="e#8402#8412#0" expanded="true" />
+            <element signature="e#15637#15638#0" expanded="true" />
+            <element signature="e#15666#15667#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2184,10 +2174,18 @@
           <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9086#9096#0" expanded="true" />
-            <element signature="e#9229#9239#0" expanded="true" />
-            <element signature="e#9380#9390#0" expanded="true" />
-            <element signature="e#9524#9534#0" expanded="true" />
+            <element signature="e#7092#7102#0" expanded="true" />
+            <element signature="e#7235#7245#0" expanded="true" />
+            <element signature="e#7378#7388#0" expanded="true" />
+            <element signature="e#7523#7533#0" expanded="true" />
+            <element signature="e#7672#7682#0" expanded="true" />
+            <element signature="e#7813#7823#0" expanded="true" />
+            <element signature="e#7964#7974#0" expanded="true" />
+            <element signature="e#8107#8117#0" expanded="true" />
+            <element signature="e#8258#8268#0" expanded="true" />
+            <element signature="e#8402#8412#0" expanded="true" />
+            <element signature="e#15637#15638#0" expanded="true" />
+            <element signature="e#15666#15667#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2212,10 +2210,18 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9086#9096#0" expanded="true" />
-            <element signature="e#9229#9239#0" expanded="true" />
-            <element signature="e#9380#9390#0" expanded="true" />
-            <element signature="e#9524#9534#0" expanded="true" />
+            <element signature="e#7092#7102#0" expanded="true" />
+            <element signature="e#7235#7245#0" expanded="true" />
+            <element signature="e#7378#7388#0" expanded="true" />
+            <element signature="e#7523#7533#0" expanded="true" />
+            <element signature="e#7672#7682#0" expanded="true" />
+            <element signature="e#7813#7823#0" expanded="true" />
+            <element signature="e#7964#7974#0" expanded="true" />
+            <element signature="e#8107#8117#0" expanded="true" />
+            <element signature="e#8258#8268#0" expanded="true" />
+            <element signature="e#8402#8412#0" expanded="true" />
+            <element signature="e#15637#15638#0" expanded="true" />
+            <element signature="e#15666#15667#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2240,10 +2246,18 @@
           <caret line="103" column="28" selection-start-line="103" selection-start-column="28" selection-end-line="103" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9086#9096#0" expanded="true" />
-            <element signature="e#9229#9239#0" expanded="true" />
-            <element signature="e#9380#9390#0" expanded="true" />
-            <element signature="e#9524#9534#0" expanded="true" />
+            <element signature="e#7092#7102#0" expanded="true" />
+            <element signature="e#7235#7245#0" expanded="true" />
+            <element signature="e#7378#7388#0" expanded="true" />
+            <element signature="e#7523#7533#0" expanded="true" />
+            <element signature="e#7672#7682#0" expanded="true" />
+            <element signature="e#7813#7823#0" expanded="true" />
+            <element signature="e#7964#7974#0" expanded="true" />
+            <element signature="e#8107#8117#0" expanded="true" />
+            <element signature="e#8258#8268#0" expanded="true" />
+            <element signature="e#8402#8412#0" expanded="true" />
+            <element signature="e#15637#15638#0" expanded="true" />
+            <element signature="e#15666#15667#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2268,10 +2282,18 @@
           <caret line="56" column="23" selection-start-line="56" selection-start-column="23" selection-end-line="56" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9086#9096#0" expanded="true" />
-            <element signature="e#9229#9239#0" expanded="true" />
-            <element signature="e#9380#9390#0" expanded="true" />
-            <element signature="e#9524#9534#0" expanded="true" />
+            <element signature="e#7092#7102#0" expanded="true" />
+            <element signature="e#7235#7245#0" expanded="true" />
+            <element signature="e#7378#7388#0" expanded="true" />
+            <element signature="e#7523#7533#0" expanded="true" />
+            <element signature="e#7672#7682#0" expanded="true" />
+            <element signature="e#7813#7823#0" expanded="true" />
+            <element signature="e#7964#7974#0" expanded="true" />
+            <element signature="e#8107#8117#0" expanded="true" />
+            <element signature="e#8258#8268#0" expanded="true" />
+            <element signature="e#8402#8412#0" expanded="true" />
+            <element signature="e#15637#15638#0" expanded="true" />
+            <element signature="e#15666#15667#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2296,10 +2318,18 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9086#9096#0" expanded="true" />
-            <element signature="e#9229#9239#0" expanded="true" />
-            <element signature="e#9380#9390#0" expanded="true" />
-            <element signature="e#9524#9534#0" expanded="true" />
+            <element signature="e#7092#7102#0" expanded="true" />
+            <element signature="e#7235#7245#0" expanded="true" />
+            <element signature="e#7378#7388#0" expanded="true" />
+            <element signature="e#7523#7533#0" expanded="true" />
+            <element signature="e#7672#7682#0" expanded="true" />
+            <element signature="e#7813#7823#0" expanded="true" />
+            <element signature="e#7964#7974#0" expanded="true" />
+            <element signature="e#8107#8117#0" expanded="true" />
+            <element signature="e#8258#8268#0" expanded="true" />
+            <element signature="e#8402#8412#0" expanded="true" />
+            <element signature="e#15637#15638#0" expanded="true" />
+            <element signature="e#15666#15667#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2324,10 +2354,18 @@
           <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9086#9096#0" expanded="true" />
-            <element signature="e#9229#9239#0" expanded="true" />
-            <element signature="e#9380#9390#0" expanded="true" />
-            <element signature="e#9524#9534#0" expanded="true" />
+            <element signature="e#7092#7102#0" expanded="true" />
+            <element signature="e#7235#7245#0" expanded="true" />
+            <element signature="e#7378#7388#0" expanded="true" />
+            <element signature="e#7523#7533#0" expanded="true" />
+            <element signature="e#7672#7682#0" expanded="true" />
+            <element signature="e#7813#7823#0" expanded="true" />
+            <element signature="e#7964#7974#0" expanded="true" />
+            <element signature="e#8107#8117#0" expanded="true" />
+            <element signature="e#8258#8268#0" expanded="true" />
+            <element signature="e#8402#8412#0" expanded="true" />
+            <element signature="e#15637#15638#0" expanded="true" />
+            <element signature="e#15666#15667#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2371,13 +2409,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24935065">
           <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/corybytez/updownex/DatabaseHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -2500,25 +2531,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/corybytez/updownex/UpDown.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="205" column="17" selection-start-line="205" selection-start-column="17" selection-end-line="205" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#9086#9096#0" expanded="true" />
-            <element signature="e#9229#9239#0" expanded="true" />
-            <element signature="e#9380#9390#0" expanded="true" />
-            <element signature="e#9524#9534#0" expanded="true" />
-          </folding>
+          <caret line="37" column="47" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/corybytez/updownex/EndActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/corybytez/updownex/UpDown.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="113" column="41" selection-start-line="113" selection-start-column="41" selection-end-line="113" selection-end-column="41" />
-          <folding />
+          <caret line="316" column="0" selection-start-line="316" selection-start-column="0" selection-end-line="316" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#7092#7102#0" expanded="true" />
+            <element signature="e#7235#7245#0" expanded="true" />
+            <element signature="e#7378#7388#0" expanded="true" />
+            <element signature="e#7523#7533#0" expanded="true" />
+            <element signature="e#7672#7682#0" expanded="true" />
+            <element signature="e#7813#7823#0" expanded="true" />
+            <element signature="e#7964#7974#0" expanded="true" />
+            <element signature="e#8107#8117#0" expanded="true" />
+            <element signature="e#8258#8268#0" expanded="true" />
+            <element signature="e#8402#8412#0" expanded="true" />
+            <element signature="e#15637#15638#0" expanded="true" />
+            <element signature="e#15666#15667#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2533,10 +2572,18 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/corybytez/updownex/DatabaseHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.92676055">
-          <caret line="37" column="47" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/corybytez/updownex/EndActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="5.2197185">
+          <caret line="120" column="34" selection-start-line="120" selection-start-column="34" selection-end-line="120" selection-end-column="34" />
           <folding />
         </state>
       </provider>
