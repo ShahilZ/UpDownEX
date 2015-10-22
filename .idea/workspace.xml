@@ -18,92 +18,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4d86023-6787-4a51-8a79-05c21e3a9f27" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/raw/blicket.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/raw/chair.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/chair.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/raw/cloud.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/cloud.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/raw/dax.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/raw/flag.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/flag.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/raw/helicopter.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/helicopter.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/raw/koba.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/raw/lep.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/raw/pank.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/raw/tanzar.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/raw/tima.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/raw/truck.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/truck.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/raw/tunk.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/raw/wug.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/raw/zav.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/multidex_1_0_1.xml" />
-      <change type="DELETED" beforePath="C:\Users\shahi_000\AndroidStudioProjects\UpDownEX\app\src\main\res\drawable\arm.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\shahi_000\AndroidStudioProjects\UpDownEX\app\src\main\res\drawable\leg.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\shahi_000\AndroidStudioProjects\UpDownEX\app\src\main\res\drawable\moon.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\shahi_000\AndroidStudioProjects\UpDownEX\app\src\main\res\drawable\rock.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\shahi_000\AndroidStudioProjects\UpDownEX\app\src\main\res\drawable\star.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\shahi_000\AndroidStudioProjects\UpDownEX\app\src\main\res\raw\arm.mp3" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\shahi_000\AndroidStudioProjects\UpDownEX\app\src\main\res\raw\leg.mp3" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\shahi_000\AndroidStudioProjects\UpDownEX\app\src\main\res\raw\moon.mp3" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\shahi_000\AndroidStudioProjects\UpDownEX\app\src\main\res\raw\rock.mp3" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\shahi_000\AndroidStudioProjects\UpDownEX\app\src\main\res\raw\star.mp3" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\shahi_000\AndroidStudioProjects\UpDownEX\app\src\main\res\raw\touch_blicket.mp3" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/airplane.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/airplane.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/balloon.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/balloon.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/bee.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/bee.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/bike.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/bike.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/bird.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/bird.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/blicket1.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/blicket1.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/blicket2.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/blicket2.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/butterfly.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/butterfly.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/car.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/car.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/dax1.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/dax1.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/dax2.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/dax2.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/dog.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/dog.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/eye.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/eye.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/feet.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/feet.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/feet.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/feet.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/fish.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/fish.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/flower.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/flower.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/gradle_project_sync_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/gradle_project_sync_data.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/hat.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/hat.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/koba1.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/koba1.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/koba2.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/koba2.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/lep1.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/lep1.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/lep2.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/lep2.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/mouse.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/mouse.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/pank1.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/pank1.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/pank2.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/pank2.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/shoe.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/shoe.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/tanzar1.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/tanzar1.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/tanzar2.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/tanzar2.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/tima1.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/tima1.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/tima2.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/tima2.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/tunk1.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/tunk1.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/tunk2.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/tunk2.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/wug1.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/wug1.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/wug2.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/wug2.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/zav1.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/zav1.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/zav2.mp3" afterPath="$PROJECT_DIR$/app/src/main/res/raw/zav2.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/corybytez/updownex/DatabaseHelper.java" afterPath="$PROJECT_DIR$/app/src/main/java/corybytez/updownex/DatabaseHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/corybytez/updownex/GetInfo.java" afterPath="$PROJECT_DIR$/app/src/main/java/corybytez/updownex/GetInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/corybytez/updownex/InstructionActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/corybytez/updownex/InstructionActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/corybytez/updownex/UpDown.java" afterPath="$PROJECT_DIR$/app/src/main/java/corybytez/updownex/UpDown.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_end.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_end.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_up_down.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_up_down.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_22_2_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_22_2_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_22_2_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_22_2_1.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="UpDownEX.iws" />
@@ -2215,7 +2129,13 @@
       <option name="project" value="LOCAL" />
       <updated>1444860981021</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Added the UI Hider and whatnot....">
+      <created>1445482309266</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1445482309266</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2232,7 +2152,7 @@
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290441" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2959559" sideWeight="0.49695387" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2959559" sideWeight="0.49695387" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290441" sideWeight="0.50304615" order="7" side_tool="true" content_ui="tabs" />
