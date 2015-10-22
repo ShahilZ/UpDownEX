@@ -45,8 +45,7 @@ public class InstructionActivity extends ActionBarActivity implements OnClickLis
         thisLayout.removeAllViews();
         if (training) {
             item2 = item;
-            //System.out.println(getResources().getIdentifier(item2, "drawable", getPackageName()));
-            item = item + "1";
+            //System.out.println(getResources().getIdentifier(item2, "drawable", getPackageName()))
             System.out.println("item 2 is " + item2 + " training: " + training);
             blicket.setImageResource(getResources().getIdentifier(item2, "drawable", getPackageName()));
             blicket.setX(getResources().getDisplayMetrics().widthPixels /3);
@@ -117,7 +116,7 @@ public class InstructionActivity extends ActionBarActivity implements OnClickLis
                 System.out.println("You touched the blicket.");
                 thisLayout.removeAllViews();
                 thisLayout.addView(greenButton);
-                item2 = item2 + "2";
+                item2 = item2 + "1";
                 int res_id = getResources().getIdentifier(item2, "raw", getPackageName());
                 //setContentView(thisLayout);
                 MediaPlayer audio2 = MediaPlayer.create(this, res_id);

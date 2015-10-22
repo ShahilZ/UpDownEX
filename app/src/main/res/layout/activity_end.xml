@@ -25,13 +25,29 @@
         </LinearLayout>
 
         <ImageView
+            android:layout_width="632dp"
+            android:layout_height="600dp"
+            android:id="@+id/imageView2"
+            android:layout_gravity="center"
+            android:src="@drawable/smile"
+            android:contentDescription="@drawable/smile" />
+
+        <!--<ImageView-->
+            <!--android:layout_width="576dp"-->
+            <!--android:layout_height="549dp"-->
+            <!--android:id="@+id/imageView"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:src="@drawable/smile" />-->
+
+        <!--
+        <ImageView
             android:layout_width="614dp"
             android:layout_height="453dp"
             android:id="@+id/imageView"
             android:layout_gravity="center"
             android:src="@drawable/smile"
             android:contentDescription="@drawable/smile" />
-
+        -->
     </FrameLayout>
 
 </FrameLayout>

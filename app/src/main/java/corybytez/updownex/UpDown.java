@@ -2,7 +2,9 @@ package corybytez.updownex;
 
 import android.app.Activity;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
@@ -12,6 +14,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
 
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -47,6 +50,7 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
     String correct;
     boolean gotRight = true;
     boolean menu = false;
+    boolean accurate = false;
     //boolean train = true;
     int width;
     int height;
@@ -60,6 +64,18 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
     ArrayList<String> trainings2 = new ArrayList<String>();
     HashMap<String, ArrayList<String[]>> selection = new HashMap<String, ArrayList<String[]>>();
     RelativeLayout myLayout;
+
+    String ordered_pairs =new String();
+    String X1 = new String();
+    String X2 = new String();
+    String Y1 = new String();
+    String Y2 = new String();
+    String time = new String();
+    String accuracy = new String();
+    String corr_img = new String();
+    String curr_ID;
+    String curr_name;
+    int ordered_pairs_size = 0;
 
 
 
@@ -79,6 +95,11 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
             String direction2;
             name1 = trainings.get(0);
             name2 = trainings2.get(0);
+
+            //store_object_names(name1.toString(), name2.toString());
+            ordered_pairs = ordered_pairs + "("+name1+","+name2+")" + "\n";
+            ordered_pairs_size++;
+
 
             above = getResources().getIdentifier(name1, "drawable", getPackageName());
             below = getResources().getIdentifier(name2, "drawable", getPackageName());
@@ -100,19 +121,40 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
                 index = 0;
                 name1 = selection.get(correct).get(index)[index];
                 name2 = selection.get(correct).get(index)[1 - index];
+
+                //System.out.println("Inside real trial.");
+                ordered_pairs = ordered_pairs + "("+name1+","+name2+")" + "\n";
+                ordered_pairs_size++;
+
                 above = getResources().getIdentifier(name1, "drawable", getPackageName());
                 below = getResources().getIdentifier(name2, "drawable", getPackageName());
 
+                //Toast.makeText(UpDown.this,
+                        //"we used " + selection.get(correct).get(0)[0], Toast.LENGTH_LONG).show();
+
             } else {
-                String[] remain = selection.get(correct).get(index);
+                String[] remain = selection.get(correct).get(1 - index);
                 ArrayList<String[]> remaining = new ArrayList<String[]>();
                 remaining.add(remain);
-                name1 = selection.get(correct).get(index)[index];
-                name2 = selection.get(correct).get(index)[1 - index];
+                name1 = selection.get(correct).get(index)[0];
+                name2 = selection.get(correct).get(index)[1];
+                //Toast.makeText(UpDown.this,
+                //"we have  " + selection.get(correct).get(index)[index], Toast.LENGTH_LONG).show();
+                //Toast.makeText(UpDown.this,
+                //        "what remains is " + remain[0] + "" + remain[1], Toast.LENGTH_LONG).show();
+
+                //System.out.println("Inside real trial.");
+                ordered_pairs = ordered_pairs + "("+name1+","+name2+")" + "\n";
+                ordered_pairs_size++;
+
                 above = getResources().getIdentifier(name1, "drawable", getPackageName());
                 below = getResources().getIdentifier(name2, "drawable", getPackageName());
+
                 selection.put(correct, remaining);
+                //Toast.makeText(UpDown.this,
+                //"we have left  " + selection.get(correct).get(0)[0], Toast.LENGTH_LONG).show();
             }
+            System.out.println("Top is " + name1 + " and bottom is " + name2);
 
             questions.remove(0);
         }
@@ -134,6 +176,9 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
         up.setX(width);
         up.setY(height);
         up.setBackgroundColor(Color.TRANSPARENT);
+
+        X1 = X1 + width +  "\n";
+        Y1 = Y1 + height + "\n";
 
         height = randGen.nextInt(maxHeight / 2) + (maxHeight / 2 + 200);
         width = randGen.nextInt(maxWidth);
@@ -162,6 +207,10 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
         down.setY(height);
         down.setBackgroundColor(Color.TRANSPARENT);
 
+        X2 = X2 + width +"\n";
+        Y2 = Y2 + height + "\n";
+
+
         myLayout.removeAllViews();
 
         correction.setX(maxWidth / 3);
@@ -177,11 +226,35 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
 
     }
 
+    private void store_final_values()
+    {
+        DatabaseHelper dbHelper = new DatabaseHelper(getApplicationContext());
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        //System.out.println("ordered_pairs_size = "+ ordered_pairs_size);
+        System.out.println(ordered_pairs);
+
+        ContentValues values1 = new ContentValues();
+        values1.put(FeedReaderContract.Table1.COLUMN_NAME_COL8, ordered_pairs);
+        values1.put(FeedReaderContract.Table1.COLUMN_NAME_COL10, X1);
+        values1.put(FeedReaderContract.Table1.COLUMN_NAME_COL11, Y1);
+        values1.put(FeedReaderContract.Table1.COLUMN_NAME_COL12, X2);
+        values1.put(FeedReaderContract.Table1.COLUMN_NAME_COL13, Y2);
+        values1.put(FeedReaderContract.Table1.COLUMN_NAME_COL14, time);
+        values1.put(FeedReaderContract.Table1.COLUMN_NAME_COL15, accuracy);
+        values1.put(FeedReaderContract.Table1.COLUMN_NAME_COL7, corr_img);
+        //values1.put(FeedReaderContract.Table1.COLUMN_NAME_COL9, "Bene");
+        //Log.d("SerahTag", "Storing the object names" + obj1 + " " + obj2);
+
+        long newRowId1 = db.update(
+                FeedReaderContract.Table1.TABLE_NAME, values1,"_id "+"="+curr_ID, null);
+    }
     private void end() {
 
         //System.out.println("Congratz");
         Toast.makeText(UpDown.this,
                 "This concludes the game. Congratulations!", Toast.LENGTH_SHORT).show();
+        store_final_values();
         Intent j = new Intent(this, EndActivity.class);
         startActivity(j);
         finish();
@@ -209,9 +282,9 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
 
         ArrayList<String[]> pair1 = new ArrayList<String[]>(); pair1.add(new String[]{"hat", "shoe"}); pair1.add(new String[]{"shoe", "hat"});
         ArrayList<String[]> pair2 = new ArrayList<String[]>(); pair2.add(new String[]{"eye", "feet"}); pair2.add(new String[]{"feet", "eye"});
-        ArrayList<String[]> pair3 = new ArrayList<String[]>(); pair3.add(new String[]{"moon", "rock"}); pair3.add(new String[]{"rock", "moon"});
-        ArrayList<String[]> pair4 = new ArrayList<String[]>(); pair4.add(new String[]{"star", "flower"}); pair4.add(new String[]{"flower", "star"});
-        ArrayList<String[]> pair5 = new ArrayList<String[]>(); pair5.add(new String[]{"arm", "leg"}); pair5.add(new String[]{"leg", "arm"});
+        ArrayList<String[]> pair3 = new ArrayList<String[]>(); pair3.add(new String[]{"helicopter", "truck"}); pair3.add(new String[]{"truck", "helicopter"});
+        ArrayList<String[]> pair4 = new ArrayList<String[]>(); pair4.add(new String[]{"cloud", "flower"}); pair4.add(new String[]{"flower", "cloud"});
+        ArrayList<String[]> pair5 = new ArrayList<String[]>(); pair5.add(new String[]{"flag", "chair"}); pair5.add(new String[]{"chair", "flag"});
         ArrayList<String[]> pair6 = new ArrayList<String[]>(); pair6.add(new String[]{"airplane", "car"}); pair6.add(new String[]{"car", "airplane"});
         ArrayList<String[]> pair7 = new ArrayList<String[]>(); pair7.add(new String[]{"bee", "fish"}); pair7.add(new String[]{"fish", "bee"});
         ArrayList<String[]> pair8 = new ArrayList<String[]>(); pair8.add(new String[]{"balloon", "bike"}); pair8.add(new String[]{"bike", "balloon"});
@@ -220,26 +293,32 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
 
 
         selection.put("hat", pair1); selection.put("shoe", pair1); selection.put("eye", pair2);
-        selection.put("feet", pair2); selection.put("moon", pair3); selection.put("rock", pair3);
-        selection.put("star", pair4); selection.put("flower", pair4); selection.put("arm", pair5);
-        selection.put("leg", pair5); selection.put("airplane", pair6); selection.put("car", pair6);
+        selection.put("feet", pair2); selection.put("helicopter", pair3); selection.put("truck", pair3);
+        selection.put("cloud", pair4); selection.put("flower", pair4); selection.put("flag", pair5);
+        selection.put("chair", pair5); selection.put("airplane", pair6); selection.put("car", pair6);
         selection.put("bee", pair7); selection.put("fish", pair7); selection.put("balloon", pair8);
         selection.put("bike", pair8); selection.put("bird", pair9); selection.put("dog", pair9);
         selection.put("butterfly", pair10); selection.put("mouse", pair10);
 
 
-        questions.add("hat"); questions.add("hat"); questions.add("shoe"); questions.add("shoe"); questions.add("eye");
-        questions.add("eye"); questions.add("feet"); questions.add("feet"); questions.add("moon"); questions.add("moon");
-        questions.add("rock"); questions.add("rock"); questions.add("star"); questions.add("star"); questions.add("flower");
-        questions.add("flower"); questions.add("arm"); questions.add("arm"); questions.add("leg"); questions.add("leg");
-        questions.add("airplane"); questions.add("airplane"); questions.add("car"); questions.add("car"); questions.add("bee");
-        questions.add("bee"); questions.add("fish"); questions.add("fish"); questions.add("balloon"); questions.add("balloon");
-        questions.add("bike"); questions.add("bike"); questions.add("bird"); questions.add("bird"); questions.add("dog");
-        questions.add("dog"); questions.add("butterfly"); questions.add("butterfly"); questions.add("mouse");
-        questions.add("mouse");
+        questions.add("hat"); questions.add("shoe"); questions.add("eye");
+        questions.add("feet"); questions.add("helicopter");
+        questions.add("truck"); questions.add("cloud"); questions.add("flower");
+        questions.add("flag"); questions.add("chair");
+        questions.add("airplane"); questions.add("car"); questions.add("bee");
+        questions.add("fish"); questions.add("balloon");
+        questions.add("bike"); questions.add("bird"); questions.add("dog");
+        questions.add("butterfly"); questions.add("mouse");
+        questions.add("hat"); questions.add("shoe"); questions.add("eye");
+        questions.add("feet"); questions.add("helicopter");
+        questions.add("truck"); questions.add("cloud"); questions.add("flower");
+        questions.add("flag"); questions.add("chair");
+        questions.add("airplane"); questions.add("car"); questions.add("bee");
+        questions.add("fish"); questions.add("balloon");
+        questions.add("bike"); questions.add("bird"); questions.add("dog");
+        questions.add("butterfly"); questions.add("mouse");
 
 
-        Collections.shuffle(questions);
         Collections.shuffle(questions);
         Collections.shuffle(questions);
         Collections.shuffle(questions);
@@ -261,7 +340,22 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
         if (!menu) {
             Intent j = new Intent(this, GetInfo.class);
             startActivity(j);
+            startActivityForResult(j, 88); //Make a log of request codes!!!
             return;
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch(requestCode) {
+            case (88) : {
+                if (resultCode == Activity.RESULT_OK) {
+                    curr_ID = data.getStringExtra("RowID");
+                    //Log.d("SerahTag", curr_ID);
+                }
+                break;
+            }
         }
     }
 
@@ -269,8 +363,10 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
     public void onClick(View v) {
         if (correct == name1) {
             curr = up;
+            curr_name = name1;
         } else {
             curr = down;
+            curr_name = name2;
         }
 
 
@@ -278,6 +374,7 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
 //            Toast.makeText(UpDown.this,
 //                    "This is not the " + correct + ", please try again!", Toast.LENGTH_SHORT).show();
             gotRight = true;
+            accurate = false;
             if (!trainingDone) {
                 //curr.setVisibility(View.INVISIBLE);
                 curr.setBackgroundColor(Color.YELLOW);
@@ -291,6 +388,7 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
             }
         } else {
             gotRight = true;
+            accurate = true;
             if (!trainingDone) {
                 rights++;
             }
@@ -312,8 +410,8 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
         curr.setVisibility(View.VISIBLE);
 
         long elapsedMillis = SystemClock.elapsedRealtime() - timer.getBase();
-        Toast.makeText(UpDown.this,
-                "Wow, you got it " + gotRight + "!" + " Elapsed seconds: " + elapsedMillis / 1000.0, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(UpDown.this,
+        // "Wow, you got it " + accurate + "!" + " Elapsed seconds: " + elapsedMillis / 1000.0, Toast.LENGTH_SHORT).show();
 
         /**
          * gotRight = whether he/she got it right or not.
@@ -321,6 +419,12 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
          * v = image the person clicked.
          * elapsedMillis = reaction time.
          */
+
+
+        accuracy = accuracy + accurate+"\n";
+//        accuracy = accuracy + gotRight+"n";
+        time = time + elapsedMillis / 1000.0 + "\n";
+        corr_img = corr_img + curr_name + "\n";
         curr.setClickable(true);
         delay.postDelayed(this, 1500);
     }

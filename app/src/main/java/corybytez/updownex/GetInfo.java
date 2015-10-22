@@ -2,6 +2,7 @@ package corybytez.updownex;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.ActionBarActivity;
@@ -103,9 +104,13 @@ public class GetInfo extends ActionBarActivity {
                 values);
 
 
-        Log.d("myTag", radioSexButton.getText().toString());
+        Log.d("SerahTag", newRowId + "");
+        //System.out.println("NewRowID = "+ newRowId);
         //Cursor c= db.rawQuery(FeedReaderContract.Table1.SHOW_ALL, null);
-        finish();
+
+        Intent resultIntent = new Intent();
+        resultIntent.putExtra("RowID", newRowId+"");
+        setResult(Activity.RESULT_OK, resultIntent);finish();
     }
 
 

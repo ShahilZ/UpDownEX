@@ -2,32 +2,32 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\shahi_000\AndroidStudioProjects\UpDownEX\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="f8efd0096475e0daf054267b61544e10dc776503">
-        <dex dex="C:\Users\shahi_000\AndroidStudioProjects\UpDownEX\app\build\intermediates\pre-dexed\debug\classes-be43f73d26ab0069f3234db519001902e3468a2d.jar" />
-    </item>
-    <item
-        jar="C:\Users\shahi_000\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
-        <dex dex="C:\Users\shahi_000\AndroidStudioProjects\UpDownEX\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.1-6758cadbd9f4a197478ccf3e09bf5590f8ca03f6.jar" />
-    </item>
-    <item
-        jar="C:\Users\shahi_000\AndroidStudioProjects\UpDownEX\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
+        jar="C:\Users\Serah\AndroidStudioProjects\UpDown3\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
-        <dex dex="C:\Users\shahi_000\AndroidStudioProjects\UpDownEX\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.1-fe6dfe61225e9135a6827354d7e71589876fa12a.jar" />
+        <dex dex="C:\Users\Serah\AndroidStudioProjects\UpDown3\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.1-4ed27808a0f2fd9033f5f31979dc583bfbaf0673.jar" />
     </item>
     <item
-        jar="C:\Users\shahi_000\AndroidStudioProjects\UpDownEX\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
+        jar="C:\Users\Serah\AndroidStudioProjects\UpDown3\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="C:\Users\Serah\AndroidStudioProjects\UpDown3\app\build\intermediates\pre-dexed\debug\classes-20716dd5b6a8700146ae5b60f9e0fdc65781f6e2.jar" />
+    </item>
+    <item
+        jar="C:\Users\Serah\AndroidStudioProjects\UpDown3\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
-        <dex dex="C:\Users\shahi_000\AndroidStudioProjects\UpDownEX\app\build\intermediates\pre-dexed\debug\classes-6b31f91d174ffd99aebe783787a856fce18b460d.jar" />
+        <dex dex="C:\Users\Serah\AndroidStudioProjects\UpDown3\app\build\intermediates\pre-dexed\debug\classes-97ab80ce19bd8d7be8c9088941a73f34553eb802.jar" />
+    </item>
+    <item
+        jar="C:\Users\Serah\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="C:\Users\Serah\AndroidStudioProjects\UpDown3\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.1-a714c7ec6abe9a1d2148431850c0610f25d02157.jar" />
     </item>
 
 </items>
