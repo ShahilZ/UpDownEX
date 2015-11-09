@@ -73,10 +73,12 @@ public class GetInfo extends ActionBarActivity {
         final EditText Age = (EditText) findViewById(R.id.Age);
         final EditText TestSite = (EditText) findViewById(R.id.TestSite);
         final EditText StudyCondition = (EditText) findViewById(R.id.StudyCondition);
-        final EditText ItemType = (EditText) findViewById(R.id.ItemType);
+        final EditText Experimenter = (EditText) findViewById(R.id.Experimenter);
         RadioGroup radioSexGroup = (RadioGroup) findViewById(R.id.RadioSex);
         int selectedId = radioSexGroup.getCheckedRadioButtonId();
         RadioButton radioSexButton = (RadioButton) findViewById(selectedId);
+        final EditText Languages = (EditText) findViewById(R.id.Languages);
+        final EditText subject_id = (EditText) findViewById(R.id.SubjectID);
 
 
         ContentValues values = new ContentValues();
@@ -86,7 +88,7 @@ public class GetInfo extends ActionBarActivity {
         values.put(FeedReaderContract.Table1.COLUMN_NAME_COL4, radioSexButton.getText().toString());
         values.put(FeedReaderContract.Table1.COLUMN_NAME_COL5, TestSite.getText().toString());
         values.put(FeedReaderContract.Table1.COLUMN_NAME_COL6, StudyCondition.getText().toString());
-        values.put(FeedReaderContract.Table1.COLUMN_NAME_COL7, ItemType.getText().toString());
+        values.put(FeedReaderContract.Table1.COLUMN_NAME_COL7, Experimenter.getText().toString());
         values.put(FeedReaderContract.Table1.COLUMN_NAME_COL8, "Charles"); //Stand in values - to be filled in later.
         values.put(FeedReaderContract.Table1.COLUMN_NAME_COL9, "Charles");
         values.put(FeedReaderContract.Table1.COLUMN_NAME_COL10, "Charles");
@@ -95,7 +97,11 @@ public class GetInfo extends ActionBarActivity {
         values.put(FeedReaderContract.Table1.COLUMN_NAME_COL13, "Charles");
         values.put(FeedReaderContract.Table1.COLUMN_NAME_COL14, "Charles");
         values.put(FeedReaderContract.Table1.COLUMN_NAME_COL15, "Charles");
-
+        values.put(FeedReaderContract.Table1.COLUMN_NAME_COL16, Languages.getText().toString());
+        values.put(FeedReaderContract.Table1.COLUMN_NAME_COL17, "Charles");
+        values.put(FeedReaderContract.Table1.COLUMN_NAME_COL18, "Charles");
+        values.put(FeedReaderContract.Table1.COLUMN_NAME_COL19, "Charles");
+        values.put(FeedReaderContract.Table1.COLUMN_NAME_COL20, subject_id.getText().toString());
 
         long newRowId;
         newRowId = db.insert(
@@ -113,5 +119,5 @@ public class GetInfo extends ActionBarActivity {
         setResult(Activity.RESULT_OK, resultIntent);finish();
     }
 
-
+//z
 }

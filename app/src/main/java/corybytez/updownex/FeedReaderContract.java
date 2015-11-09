@@ -5,7 +5,7 @@ import android.provider.BaseColumns;
 
 public final class FeedReaderContract {
 
-    public static final  int    DATABASE_VERSION   = 1;
+    public static final  int    DATABASE_VERSION    = 1;
     public static final  String DATABASE_NAME      = "database.db";
     private static final String TEXT_TYPE          = " TEXT";
     public static final String DATE_TYPE           = " DATE";
@@ -18,14 +18,15 @@ public final class FeedReaderContract {
     private FeedReaderContract() {}
 
     public static abstract class Table1 implements BaseColumns {
-        public static final String TABLE_NAME       = "UpDown";
+        //public static final String TABLE_NAME       = "UpDown";
+        public static final String TABLE_NAME       = "UpDown3";
         public static final String COLUMN_NAME_COL1 = "TestDate";
         public static final String COLUMN_NAME_COL2 = "DOB";
         public static final String COLUMN_NAME_COL3 = "Age";
         public static final String COLUMN_NAME_COL4 = "Gender";
         public static final String COLUMN_NAME_COL5 = "TestingSite";
         public static final String COLUMN_NAME_COL6 = "StudyCondition";
-        public static final String COLUMN_NAME_COL7 = "ItemType"; //WHAT DOES THIS REPRESENT EXACTLY???
+        public static final String COLUMN_NAME_COL7 = "Experimenter";
         public static final String COLUMN_NAME_COL8 = "Image1"; //Each referenced image has it's own unique identifier.
         public static final String COLUMN_NAME_COL9 = "Image2";
         public static final String COLUMN_NAME_COL10 = "X1"; //The x-coordinate of Image1
@@ -34,7 +35,11 @@ public final class FeedReaderContract {
         public static final String COLUMN_NAME_COL13 = "Y2";
         public static final String COLUMN_NAME_COL14 = "ReactionTime";
         public static final String COLUMN_NAME_COL15 = "Accuracy"; //IS THIS A BINARY VALUE????
-
+        public static final String COLUMN_NAME_COL16 = "Languages"; //Is the user a monolingual english speaker or not?
+        public static final String COLUMN_NAME_COL17 = "TargetPosition";
+        public static final String COLUMN_NAME_COL18 = "TargetImage"; //whcih image do we want the user to click on?
+        public static final String COLUMN_NAME_COL19 = "Phase"; // Are we in the testing or trial phase?
+        public static final String COLUMN_NAME_COL20 = "SubjectID";
 
         public static final String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS " +
                 TABLE_NAME + " (" +
@@ -54,9 +59,13 @@ public final class FeedReaderContract {
                 COLUMN_NAME_COL12 + TEXT_TYPE + COMMA_SEP +
                 COLUMN_NAME_COL13 + TEXT_TYPE + COMMA_SEP +
                 COLUMN_NAME_COL14 + TEXT_TYPE + COMMA_SEP +
-                COLUMN_NAME_COL15 + TEXT_TYPE +  " )";
+                COLUMN_NAME_COL15 + TEXT_TYPE + COMMA_SEP +
+                COLUMN_NAME_COL16 + TEXT_TYPE + COMMA_SEP +
+                COLUMN_NAME_COL17 + TEXT_TYPE + COMMA_SEP +
+                COLUMN_NAME_COL18 + TEXT_TYPE + COMMA_SEP +
+                COLUMN_NAME_COL19 + TEXT_TYPE + COMMA_SEP +
+                COLUMN_NAME_COL20 + TEXT_TYPE +  " )";
         public static final String DELETE_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME;
-
         public static final String SHOW_ALL = "SELECT * FROM "+ TABLE_NAME;
     }
 }

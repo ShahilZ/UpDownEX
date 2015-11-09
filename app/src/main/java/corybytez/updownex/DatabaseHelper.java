@@ -14,7 +14,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         super(context, context.getExternalFilesDir(null).getAbsolutePath() + "/" + FeedReaderContract.DATABASE_NAME, null,
                 FeedReaderContract.DATABASE_VERSION);
        // super(context, Environment.getExternalStorageDirectory() + FeedReaderContract.DATABASE_NAME, null,
-        //        FeedReaderContract.DATABASE_VERSION);
+        //        FeedReaderContract.DATABASE_VERSION); ;
         //Data is stored at internal storage/ android/ data/corybytez/ file/ dtabase.db
         //System.out.println("context.getExternalFilesDir(null) " + context.getExternalFilesDir(null));
         System.out.println(Environment.getExternalStorageDirectory() + " Environment.getExternalStorageDirectory()");

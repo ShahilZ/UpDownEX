@@ -25,19 +25,20 @@
         </LinearLayout>
 
         <ImageView
-            android:layout_width="632dp"
-            android:layout_height="600dp"
-            android:id="@+id/imageView2"
+            android:layout_width="703dp"
+            android:layout_height="672dp"
+            android:id="@+id/imageView"
             android:layout_gravity="center"
             android:src="@drawable/smile"
             android:contentDescription="@drawable/smile" />
 
-        <!--<ImageView-->
-            <!--android:layout_width="576dp"-->
-            <!--android:layout_height="549dp"-->
-            <!--android:id="@+id/imageView"-->
-            <!--android:layout_gravity="center"-->
-            <!--android:src="@drawable/smile" />-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="This concludes the game. Thanks for playing!"
+            android:id="@+id/textView"
+            android:layout_gravity="center_horizontal|top" />
 
         <!--
         <ImageView

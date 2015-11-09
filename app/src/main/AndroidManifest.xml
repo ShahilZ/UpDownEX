@@ -27,6 +27,7 @@
         </activity>
         <activity
             android:name=".GetInfo"
+            android:windowSoftInputMode="adjustPan|stateHidden"
             android:configChanges="orientation"
             android:label="GetInfo"
             android:screenOrientation="portrait" >

@@ -44,43 +44,59 @@ public class InstructionActivity extends ActionBarActivity implements OnClickLis
         System.out.println("is training on? " + training);
         thisLayout.removeAllViews();
         if (training) {
+            item2 = item + "s";
             item2 = item;
-            //System.out.println(getResources().getIdentifier(item2, "drawable", getPackageName()))
+            //System.out.println(getResources().getIdentifier(item2, "drawable", getPackageName()));
+            //item = item + "1";
             System.out.println("item 2 is " + item2 + " training: " + training);
             blicket.setImageResource(getResources().getIdentifier(item2, "drawable", getPackageName()));
-            blicket.setX(getResources().getDisplayMetrics().widthPixels /3);
-            blicket.setY(getResources().getDisplayMetrics().heightPixels /3);
+            blicket.setX(getResources().getDisplayMetrics().widthPixels / 3);
+            blicket.setY(getResources().getDisplayMetrics().heightPixels / 3);
             blicket.setBackgroundColor(Color.TRANSPARENT);
             blicket.setOnClickListener(this);
-
-            greenButton = new ImageButton(this);
-
-
-            greenButton.setOnClickListener(this);
-            greenButton.setBackgroundColor(Color.TRANSPARENT);
-            greenButton.setImageResource(getResources().getIdentifier("button", "drawable", getPackageName()));
-
-            greenButton.setX(getResources().getDisplayMetrics().widthPixels / 3);
-            greenButton.setY(getResources().getDisplayMetrics().heightPixels / 3);
-            //greenButton.setLayoutParams(lParams);
-
-
             thisLayout.addView(blicket);
-            //thisLayout.addView(greenButton);
-            setContentView(thisLayout);
         }
+
+        greenButton = new ImageButton(this);
+
+
+        greenButton.setOnClickListener(this);
+        greenButton.setBackgroundColor(Color.TRANSPARENT);
+        greenButton.setImageResource(getResources().getIdentifier("button", "drawable", getPackageName()));
+
+        greenButton.setX(getResources().getDisplayMetrics().widthPixels / 3);
+        greenButton.setY(getResources().getDisplayMetrics().heightPixels / 3);
+        if(training) {
+            greenButton.setVisibility(View.INVISIBLE);
+        }
+        //greenButton.setLayoutParams(lParams);
+
+
+
+        thisLayout.addView(greenButton);
+        setContentView(thisLayout);
         int res_id = getResources().getIdentifier(item, "raw", getPackageName());
 
         audio = MediaPlayer.create(this, res_id );
+
         audio.start();
+        //while(audio.isPlaying()){}
+        greenButton.setClickable(true);
+        greenButton.setEnabled(false);
+        //while(audio.isPlaying()) {}
+        greenButton.setEnabled(true);
 //        if (!training) {
+//            greenButton.setClickable(false);
 //            while (audio.isPlaying()) {}
 //        }
-//        for (int i = 0; i < 1000; i++) {}
-//        while (!audio.isPlaying()) {
+////        for (int i = 0; i < 1000; i++) {}
+////        while (!audio.isPlaying()) {
+////            greenButton.setClickable(true);
+////          } ;
+//        if(!audio.isPlaying()) {
 //            greenButton.setClickable(true);
 //        }
-        greenButton.setClickable(true);
+        //greenButton.setClickable(true);
 
     }
 
@@ -109,20 +125,24 @@ public class InstructionActivity extends ActionBarActivity implements OnClickLis
     @Override
     public void onClick(View v) {
         if (audio.isPlaying()) {
-            audio.stop();
+            //audio.stop();
+            return;
         }
         if (training) {
             if (v == blicket) {
                 System.out.println("You touched the blicket.");
-                thisLayout.removeAllViews();
-                thisLayout.addView(greenButton);
+                //thisLayout.removeAllViews();
+                //thisLayout.addView(greenButton);
                 item2 = item2 + "1";
                 int res_id = getResources().getIdentifier(item2, "raw", getPackageName());
                 //setContentView(thisLayout);
-                MediaPlayer audio2 = MediaPlayer.create(this, res_id);
+                blicket.setVisibility(View.INVISIBLE);
+                greenButton.setVisibility(View.VISIBLE);
+                //setContentView(thisLayout);
                 while (audio.isPlaying()) {}
-                audio2.start();
-                while (audio2.isPlaying()) {}
+
+                audio = MediaPlayer.create(this, res_id);
+                audio.start();
                 setContentView(thisLayout);
                 return;
 
