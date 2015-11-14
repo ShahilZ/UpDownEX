@@ -66,7 +66,7 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
     RelativeLayout myLayout;
 
     String ordered_pairs =new String();
-    String X1 =new String();
+    String X1 = new String();
     String X2 = new String();
     String Y1 = new String();
     String Y2 = new String();
@@ -90,8 +90,9 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
         }
         int above = 0;
         int below = 0;
-        int index = randGen.nextInt(8);
+        int index = randGen.nextInt(2);
         if (trainer()) {
+            index = randGen.nextInt(8);
             String direction;
             String direction2;
             if(index < 4){
@@ -465,7 +466,7 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
         corr_img = corr_img + curr_name + "\n";
 
         curr.setClickable(true);
-        delay.postDelayed(this, 1500);
+        delay.postDelayed(this, 1000);
     }
     private boolean trainer() {
         System.out.println("Currently, the total is...." + total + " and trainingDone is " + trainingDone);
@@ -490,24 +491,21 @@ public class UpDown extends Activity implements OnClickListener, Runnable{
             //return;
         }
         //smile.setVisibility(View.INVISIBLE);
-        String blicket = questions.get(0);
-        System.out.println("The size of trainings is ...." + trainings.size());
-        if (trainer()) {
-            Random rand = new Random();
-            int index = rand.nextInt(2);
-//            if (index == 0) {
-//                correct = trainings.get(0);
-//            } else {
-//                correct = trainings2.get(0);
-//            }
-            correct = trainings.get(0);
-            blicket = correct;
-        }
-        if(!kill) {
-            Intent i = new Intent(this, InstructionActivity.class);
-            i.putExtra("blicket", blicket);
-            i.putExtra("train", trainer());
-            startActivity(i);
+        else {
+            String blicket = questions.get(0);
+            System.out.println("The size of trainings is ...." + trainings.size());
+            if (trainer()) {
+                Random rand = new Random();
+                int index = rand.nextInt(2);
+                correct = trainings.get(0);
+                blicket = correct;
+            }
+            if (!kill) {
+                Intent i = new Intent(this, InstructionActivity.class);
+                i.putExtra("blicket", blicket);
+                i.putExtra("train", trainer());
+                startActivity(i);
+            }
         }
     } //z
     @Override
